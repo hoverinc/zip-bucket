@@ -21,7 +21,7 @@ function suggestedName(fname, fromPath){
         return fname;
     }
     const splitFrom = fromPath.split('/').filter(s => s.length > 0);
-    const index = splitFrom.length-1;
+    const index = splitFrom.length;
     if (index <= 0) {
         return fname;
     }
