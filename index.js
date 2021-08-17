@@ -43,14 +43,25 @@ const validateOptions = ({fromBucket, fromPath}) => {
 
 module.exports = (storage) => (options) => {
     validateOptions(options);
-    const {fromBucket, fromPath, toBucket, toPath, keep, mapper, metadata, progress, downloadValidation} = options;
+    const {
+        fromBucket,
+        fromPath,
+        toBucket,
+        toPath,
+        keep,
+        mapper,
+        metadata,
+        progress,
+        downloadValidation,
+        compressionLevel = 2
+    } = options;
 
     if ((!keep) && (!toBucket)) {
         return Promise.resolve(null);
     }
     const manifest = [];
     
-    const zip = archiver('zip', {zlib: { level: 9 }});
+    const zip = archiver('zip', {zlib: { level: compressionLevel }});
     zip.on('error', (e)=>{ throw e; });
 
     let keepPromise;
