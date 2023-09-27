@@ -1,15 +1,14 @@
 {
   "name": "zip-bucket",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "zips files in a Google Cloud Storage [tm] bucket",
   "main": "index.js",
-  "bin": "bin.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec --slow 50 --timeout 240000",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- --slow 50 --timeout 240000 -R spec test/*"
+    "test": "c8 mocha --reporter spec --slow 50 --timeout 240000",
+    "cover": "c8 cover mocha -- --slow 50 --timeout 240000 -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -27,16 +26,16 @@
   "homepage": "https://github.com/DrPaulBrewer/zip-bucket#readme",
   "dependencies": {
     "archiver": "^5.3.1",
-    "commander": "^9.4.1",
+    "commander": "^11.0.0",
     "promise-retry": "^2.0.1",
-    "tiny-async-pool": "^2.1.0",
-    "@google-cloud/storage": "^6.7.0"
+    "tiny-async-pool": "^2"
   },
   "devDependencies": {
+    "@google-cloud/storage": "^6.12.0",
+    "c8": "^8.0.1",
     "command-promise": "^2.0.1",
     "coveralls": "^3.1.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^10.1.0",
+    "mocha": "^10.2.0",
     "pipe-to-storage": "^0.10.1",
     "should": "^13.2.3",
     "verify-bucket-md5": "^0.5.0",
