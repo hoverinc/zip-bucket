@@ -25,17 +25,17 @@
   },
   "homepage": "https://github.com/DrPaulBrewer/zip-bucket#readme",
   "dependencies": {
-    "archiver": "^5.3.1",
-    "commander": "^11.0.0",
+    "archiver": "^7.0.1",
+    "commander": "^12.0.0",
     "promise-retry": "^2.0.1",
     "tiny-async-pool": "^2"
   },
   "devDependencies": {
-    "@google-cloud/storage": "^6.12.0",
-    "c8": "^8.0.1",
+    "@google-cloud/storage": "^7.10.2",
+    "c8": "^9.1.0",
     "command-promise": "^2.0.1",
     "coveralls": "^3.1.1",
-    "mocha": "^10.2.0",
+    "mocha": "^10.4.0",
     "pipe-to-storage": "^0.10.1",
     "should": "^13.2.3",
     "verify-bucket-md5": "^0.5.0",
